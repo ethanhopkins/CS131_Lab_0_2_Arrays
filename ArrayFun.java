@@ -7,22 +7,17 @@
  */
 //default constructor
 public class ArrayFun {
-	Square myArray[] = new Square[6];
+	Square myArray[] = new Square[6]; //array to hold 6 square objects.
 	
-	//setter
-	public void setArrayItem(int index, Square s) {
-		myArray[index] = s;
-	}//end setter
-	
-	//getter
-	public Square getArrayItem(int index) {
-		return myArray[index];
-	}//end getter
+	int size = myArray.length; //integer to hold the length of myArray
 	
 	
-	//preferred constructor
-	int size = myArray.length;
-	
+	/**
+	 * The preferred constructor creates and assigns a square object to 
+	 * each index of the array.
+	 * 
+	 * @param size; uses the length of the array as a parameter.
+	 */
 	public ArrayFun(int size) {
 			Square sq1 = new Square();
 			myArray[0] = sq1;
@@ -44,7 +39,9 @@ public class ArrayFun {
 	}//end preferred constructor
 	
 	
-	//forward method
+	/**
+	 * This method will print every element of myArray from left to right.
+	 */
 	public void forward() {
 		for (int i = 0; i < 6; i++) {
 			myArray[i].side = i;
@@ -52,7 +49,10 @@ public class ArrayFun {
 		}
 	}//end forward method
 	
-	//backward method
+	
+	/**
+	 * This method will print every element of myArray from left to right.
+	 */
 	public void backward() {
 		for (int i = 5; i >= 0; i--) {
 			myArray[i].side = i;
@@ -60,10 +60,38 @@ public class ArrayFun {
 		}
 	}//end backward method
 	
-	//sum method
+	
+	/**
+	 * This method will use an accumulator to add all of the area values
+	 * of every square object within myArray and print the result.
+	 */
 	public void sum() {
-		for (int i = 0; i < 7; i++) {
-			myArray[i].area();
+		double sum = 0;
+		for (int i = 0; i < 6; i++) {
+			//Accumulator
+			sum = sum + myArray[i].area();
 		}
+		System.out.println("Sum: " + sum);
 	}//end sum method
-}
+	
+	
+	/**
+	 * 
+	 * @param index; the index of the value that is being changed.
+	 * @param s; the new square value to be set.
+	 */
+		public void setArrayItem(int index, Square s) {
+			myArray[index] = s;
+		}//end setter
+		
+		
+		/**
+		 * 
+		 * @param index; the specified index to return an item from.
+		 * @return the element at the specified index.
+		 */
+		public Square getArrayItem(int index) {
+			return myArray[index];
+		}//end getter
+	
+}//end class
