@@ -13,16 +13,14 @@ public class Application {
 		Square sq1 = new Square();
 		System.out.println("Square area: " + sq1.area());
 		
-		//Circle class main
-		Circle c1 = new Circle();
-		System.out.println("Circle area: " + c1.area());
 		
 		//ArrayFun class main
-		ArrayFun fun = new ArrayFun(6);
-		fun.forward();
+		ArrayFun sqArr = new ArrayFun(6);
+		sqArr.forward();
 		System.out.println("\n");
-		fun.backward();
+		sqArr.backward();
 		System.out.println("\n");
+		sqArr.sum();
 	}
 
 }
