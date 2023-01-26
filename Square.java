@@ -5,31 +5,52 @@
  * Homework 1
  * Spring Semester/Freshman Year
  */
-//preferred constructor
+
 public class Square {
 
-	double side = 2;
+	double side;//side will be used to determine the area of each square.
 	
-	//default constructor
+	/**
+	 * The default constructor will initialize size to a value of 0.
+	 */
 	public Square() {
-		double side = 0;
-	}
+	side = 0;	
+	}//end default constructor
 	
 	
-	//getter
-	public double getSide() {
-		return side;
-	}
-	
-	//setter
-	public void setSide(double newSide) {
-		side = newSide;
-	}
+	/** 
+	 * @param side; the value of side will be 5 if any value is specified.
+	 */
+	public Square(double side) {
+		side = 5;
+	}//end preferred constructor
 	
 	
-	//area method
+	/**
+	 * This method will multiply the side variable to a power of 2 to 
+	 * find the area.
+	 * 
+	 * @return the area value
+	 */
 	public double area() {
 		return Math.pow(side, 2);
-	}
+	}//end area method
 	
-}
+	
+	/**
+	 * @return the value of side.
+	 */
+	public double getSide() {
+		return side;
+	}//end getter
+	
+	
+	/**
+	 * 
+	 * @param newSide; the value of side to be set.
+	 */
+	public void setSide(double newSide) {
+		side = newSide;
+	}//end setter
+	
+}//end class
